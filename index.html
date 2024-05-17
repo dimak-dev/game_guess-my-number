@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Demo: Guess a number!</title>
@@ -8,25 +9,25 @@
     Guess My&nbsp;Number!
 </h1>
 <div id="header">
-    <div id="question">?</div>
+    <div id="secret_number">?</div>
 </div>
 <div id="play_board">
     <div id="guess">
-        <input id="guess_value" type="number"/>
-        <button id="check_button">Check!</button>
+        <input id="guess_value" type="number" disabled min="1" max="20"/>
+        <button id="check_button" disabled>Check!</button>
         <button id="reset_button">New game</button>
         <button id="help_button">Help</button>
     </div>
     <div id="results">
-        <p>Status: <strong id="status">Waiting...</strong></p>
+        <p id="status">Waiting...</p>
         <div>&nbsp;</div>
         <p>Score: <strong id="score">20</strong></p>
-        <p>High score: <strong id="highScore">0</strong></p>
+        <p>High score: <strong id="high_score">0</strong></p>
     </div>
 </div>
 
-<div class="overlay hidden"></div>
-<div class="help_modal hidden">
+<div id="overlay" class="hidden"></div>
+<div id="help_modal" class="hidden">
     <div class="header">
         <h3>How to play</h3>
         <div></div>
