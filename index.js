@@ -6,7 +6,8 @@ let secretNumber;
 // Buttons
 const checkButton = document.getElementById('check_button');
 const newGameButton = document.getElementById('reset_button');
-const helpButton = document.getElementById('help_button');
+const openHelpButton = document.getElementById('open_help_button');
+const closeHelpButton = document.getElementById('close_help_button');
 
 // Elements
 const guessValueElement = document.getElementById('guess_value');
@@ -15,6 +16,9 @@ const statusElement = document.querySelector('#results #status');
 const scoreElement = document.querySelector('#results #score');
 const highScoreElement = document.querySelector('#results #high_score');
 
+// Modal window
+const overlayElement = document.getElementById('overlay');
+const modalWindowElement = document.getElementById('help_modal');
 
 // Default values
 const defaultSecretNumber = secretNumberElement.textContent;
@@ -24,6 +28,8 @@ const defaultGuessValue = guessValueElement.value;
 
 newGameButton.addEventListener('click', newGame);
 checkButton.addEventListener('click', checkGuess);
+openHelpButton.addEventListener('click', openHelp);
+closeHelpButton.addEventListener('click', closeHelp);
 
 // Init game
 newGame();
@@ -101,4 +107,20 @@ function checkGuess() {
         statusElement.textContent = 'To high!';
     }
     scoreElement.textContent = scoreValue.toString();
+}
+
+/**
+ * Open help modal window.
+ */
+function openHelp() {
+    overlayElement.classList.remove('hidden');
+    modalWindowElement.classList.remove('hidden');
+}
+
+/**
+ * Close help modal window.
+ */
+function closeHelp() {
+    overlayElement.classList.add('hidden');
+    modalWindowElement.classList.add('hidden');
 }
