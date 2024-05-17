@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'PressStart2P';
+    src: url("./PressStart2P-Regular.ttf") format('truetype'), url("./PressStart2P-Regular.woff") format('woff');
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+* {
+    /*margin: 0;*/
+    /*padding: 0;*/
+    font-family: "PressStart2P", monospace;
+    box-sizing: border-box;
+}
+
+input {
+    background: black;
+    color: white;
+    width: 80%;
+    padding: 12px 20px;
+}
+
+button {
+    background: black;
+    color: white;
+    padding: 12px 20px;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+body.inverted {
+    background-color: white;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+}
+
+#header {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, black 40%, white 40% 60%, black 60%);
+    text-align: center;
+}
+
+#header #question {
+    display: inline-block;
+    margin: auto auto;
+    /*height: 100px;*/
+    /*width: 94px;*/
+    padding: 20px 10px 20px 20px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-size: 64px;
+    left: calc(50% - 64px / 2);
+}
+
+
+#play_board {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    #play_board {
+        flex-direction: column;
+    }
+}
+
+#play_board > * {
+    flex: 1;
+    display: block;
+    /*padding-left: 30px;*/
+    /*padding-right: 30px;*/
+}
+
+#play_board > #guess > * {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#play_board > #results > * {
+    width: 100%;
+    margin: 20px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    HEIGHT: 100%;
+    filter: blur(8px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.help_modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* position the div in center */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    height: 80vh;
+    transform: translate(-50%, -50%);
+
+    border: 4px solid white;
+    background: black;
+
+}
+
+.help_modal > * {
+    padding: 10px;
+}
+
+.help_modal .header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+.help_modal .header h3 {
+    flex: 1
+}
+.help_modal .header button {
+    align-content: flex-end;
+}
+
+.help_modal .body {
+    overflow: scroll;
+}
+.help_modal .body * {
+    font-family:  Arial, Helvetica, sans-serif !important;
+}
+
+.hidden {
+    display: none;
+}
