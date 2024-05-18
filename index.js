@@ -31,6 +31,35 @@ checkButton.addEventListener('click', checkGuess);
 openHelpButton.addEventListener('click', openHelp);
 closeHelpButton.addEventListener('click', closeHelp);
 
+document.addEventListener('keydown', (event) => {
+    switch (event.code) {
+        case 'Digit1':
+        case 'Digit2':
+        case 'Digit3':
+        case 'Digit4':
+        case 'Digit5':
+        case 'Digit6':
+        case 'Digit7':
+        case 'Digit8':
+        case 'Digit9':
+        case 'Digit0':
+            // without prevention for adding number to input (when already focused)
+            return guessValueElement.focus();
+        case 'KeyC':
+            event.preventDefault();
+            return checkGuess();
+        case 'KeyN':
+            event.preventDefault();
+            return newGame();
+        case 'F1':
+            event.preventDefault();
+            return openHelp();
+        case 'Escape':
+            event.preventDefault();
+            return closeHelp();
+    }
+});
+
 // Init game
 newGame();
 
