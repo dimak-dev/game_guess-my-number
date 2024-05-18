@@ -24,9 +24,36 @@ input[type=number] {
 
 input {
     background: black;
+    text-align: center;
     color: white;
     width: 80%;
     padding: 12px 20px;
+}
+
+button, input {
+    border-top: 2px solid #d3d3d3;
+    border-left: 2px solid #d3d3d3;
+    border-right: 2px solid #696969;
+    border-bottom: 2px solid #696969;
+}
+
+button:disabled, input:disabled {
+    border-top: 2px solid #212121;
+    border-left: 2px solid #212121;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+button:active, input:focus {
+    outline: 0;
+    border-top: 2px solid dimgray;
+    border-left: 2px solid dimgray;
+    border-right: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+}
+
+button:active {
+    padding: 14px 18px 10px 22px;
 }
 
 button {
